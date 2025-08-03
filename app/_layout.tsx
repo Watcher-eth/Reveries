@@ -1,10 +1,8 @@
-import "../lib/polyfills/hyperliquid";
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { BottomSheetModalProvider } from "@gorhom/bottom-sheet"
 import { RootSiblingParent } from "react-native-root-siblings"
 import 'react-native-reanimated';
 
@@ -55,7 +53,7 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#101010" }}>
+      <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#F8F8F8" }}>
         <RootSiblingParent>
           <Stack>
             <Stack.Screen name="(app)" options={{ headerShown: false }} />

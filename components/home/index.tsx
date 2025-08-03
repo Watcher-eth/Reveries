@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../common/Navbar'
-import { ScrollView } from 'react-native'
+import { ScrollView, View } from 'react-native'
+import InfiniteCanvas from '../ui/InfiniteCanvas'
 
 const HomePage = () => {
   return (
-    <ScrollView style={{  backgroundColor: '#F8F8F8', width: '100%' }} stickyHeaderIndices={[0]}>
-      <Navbar/>
-     
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+          <InfiniteCanvas/>
+    </View>
   )
 }
 
