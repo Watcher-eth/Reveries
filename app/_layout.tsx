@@ -1,6 +1,5 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { RootSiblingParent } from "react-native-root-siblings"
@@ -9,6 +8,7 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
 import { GestureHandlerRootView } from "react-native-gesture-handler"
+import { Stack } from '@/components/layout/TransitionStack'
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -56,7 +56,9 @@ function RootLayoutNav() {
       <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#F8F8F8" }}>
         <RootSiblingParent>
           <Stack>
-            <Stack.Screen name="(app)" options={{ headerShown: false }} />
+            <Stack.Screen name="(app)" options={{ headerShown: false, 						nativeGestureEnabled: true,
+						nativeGestureDirection: "horizontal",
+ }} />
           </Stack>
       </RootSiblingParent>
     </GestureHandlerRootView>

@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <LinearGradient colors={["#fefefe", "rgba(255, 255, 255, 0)"]} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, width: '100%', paddingTop: 60, position: "absolute", top: 0, zIndex: 1000 }}>
-        <AnimatedPressable contentStyle={{ flexDirection: 'row', alignItems: 'center' }} onPress={() => {}}>
+        <AnimatedPressable contentStyle={{ flexDirection: 'row', alignItems: 'center' }} onPress={() => {router.navigate("/")}}>
             <Text style={{ fontFamily: 'SFPro-Bold', fontSize: 26, color: '#404040' }}>Reveries</Text>
         </AnimatedPressable>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 13 }}>
