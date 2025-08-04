@@ -1,10 +1,10 @@
 // app/(app)/_layout.tsx
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Transition from 'react-native-screen-transitions';
 import { interpolate } from '@shopify/react-native-skia'
 import { Stack } from '@/components/layout/TransitionStack'
 import { Easing } from 'react-native-reanimated'
+import Transition from '@/lib/react-native-screen-transitions/src'
 
 
 export const unstable_settings = {
@@ -28,6 +28,83 @@ export default function AppLayout() {
          headerShown: false,
         }}
       />
+        				<Stack.Screen
+					name="create"
+					options={{
+						enableTransitions: true,
+						gestureEnabled: true,
+						gestureDirection: ["horizontal", "vertical"],
+						screenStyleInterpolator: ({
+							current,
+							layouts: { screen },
+							progress,
+						}) => {
+							"worklet";
+
+							/** Combined */
+							const scale = interpolate(progress, [0, 1, 2], [0, 1, 0.75]);
+							const borderRadius = interpolate(
+								progress,
+								[0, 1, 2],
+								[36, 36, 36],
+							);
+
+							/** Vertical */
+							const translateY = interpolate(
+								current.gesture.normalizedY,
+								[-1, 1],
+								[-screen.height * 0.5, screen.height * 0.5],
+								"clamp",
+							);
+
+							/** Horizontal */
+							const translateX = interpolate(
+								current.gesture.normalizedX,
+								[-1, 1],
+								[-screen.width * 0.5, screen.width * 0.5],
+								"clamp",
+							);
+
+							return {
+								contentStyle: {
+									transform: [
+										{ scale },
+										{ translateY: translateY },
+										{ translateX },
+									],
+									borderRadius,
+								},
+							};
+						},
+						transitionSpec: {
+							open: Transition.specs.DefaultSpec,
+							close: Transition.specs.DefaultSpec,
+						},
+					}}
+				/>
+
+                     <Stack.Screen
+        name="share"
+        options={{
+         headerShown: false,
+         enableTransitions: true,
+         ...Transition.presets.ElasticCard(),
+        }}
+
+      />
+
+<Stack.Screen
+        name="onramp"
+        options={{
+         headerShown: false,
+         ...Transition.presets.ZoomIn(),
+         enableTransitions: true,
+         ...Transition.presets.ZoomIn(),
+
+          }}
+
+      />
+
       <Stack.Screen
 				name="[id]"
 				options={{

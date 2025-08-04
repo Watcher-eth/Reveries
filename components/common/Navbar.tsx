@@ -10,12 +10,16 @@ const Navbar = () => {
 
   return (
     <LinearGradient colors={["#fefefe", "rgba(255, 255, 255, 0)"]} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, width: '100%', paddingTop: 60, position: "absolute", top: 0, zIndex: 1000 }}>
-        <AnimatedPressable contentStyle={{ flexDirection: 'row', alignItems: 'center' }} onPress={() => {router.navigate("/")}}>
+        <AnimatedPressable contentStyle={{ flexDirection: 'row', alignItems: 'center' }} onPress={() => {router.navigate("/create")}}>
             <Text style={{ fontFamily: 'SFPro-Bold', fontSize: 26, color: '#404040' }}>Reveries</Text>
         </AnimatedPressable>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 13 }}>
+        <AnimatedPressable onPress={() => {router.navigate("/share")}}>
         <SymbolView name="qrcode" size={24} tintColor={"#404040"} weight="bold"/>
+        </AnimatedPressable>
+        <AnimatedPressable onPress={() => {router.navigate("/onramp")}}>
         <SymbolView name="ellipsis" size={24} tintColor={"#404040"} weight="bold"/>
+        </AnimatedPressable>
         </View>    
     </LinearGradient>
   )

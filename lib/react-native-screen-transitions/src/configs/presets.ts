@@ -202,6 +202,7 @@ export const ElasticCard = (
 				"clamp",
 			);
 
+			
 			/**
 			 * Applies to unfocused screen ( previous screen )
 			 */
