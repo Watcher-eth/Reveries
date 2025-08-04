@@ -52,7 +52,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
     return {
       opacity: isExpanded.value
         ? withDelay(
-            500 + index * 50,
+            150 + index * 50,
             withTiming(1, {
               duration: 200,
               easing: Easing.out(Easing.ease),
@@ -63,7 +63,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         {
           translateY: isExpanded.value
             ? withDelay(
-                500 + index * 50,
+                150 + index * 50,
                 withSpring(0, {
                   damping: 15,
                   stiffness: 150,

@@ -89,8 +89,6 @@ paddingVertical: 30,
           <SymbolView name="xmark" size={20} tintColor="#727070" weight="bold" />
         </AnimatedPressable>
       </LinearGradient>
-
-      {/* dotted grid bg */}
       <GridMaskedBackground />
       <LinearGradient
         colors={["rgba(255,255,255,0)", "rgba(240, 240, 240, 0.5)", "#fefefe"]}
@@ -99,7 +97,7 @@ paddingVertical: 30,
           justifyContent: "space-between",
           alignItems: "center",
           paddingHorizontal: 16,
-paddingVertical: 30,
+          paddingVertical: 30,
           paddingTop: 60,
           height: height * 0.8,
           width: "100%",
@@ -110,8 +108,6 @@ paddingVertical: 30,
           bottom: 0,
         }}
       />
-
-      {/* ─── Photo selector card ───────────────────────────── */}
       <AnimatedPressable
         onPress={pickImage}
         containerStyle={{
