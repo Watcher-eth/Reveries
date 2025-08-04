@@ -16,7 +16,7 @@ import {
 type P = { id: string; uri: string; x: number; y: number; w: number; h: number; rot: number };
 
 // Build a perforated “stamp” silhouette: outer rect minus circular bites along edges.
-function makeStampOutline(w: number, h: number, tooth = 12): typeof SkPath {
+export function makeStampOutline(w: number, h: number, tooth = 12): typeof SkPath {
   const outline = Skia.Path.Make();
   const bites   = Skia.Path.Make();
 
