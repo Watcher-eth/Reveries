@@ -94,6 +94,8 @@ export default function AddCash() {
 
 const styles = StyleSheet.create({
   container: {
+    borderRadius: 40,
+
     flex: 1,
     backgroundColor: '#101010',
   },

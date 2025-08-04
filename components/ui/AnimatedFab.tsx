@@ -87,7 +87,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
       onPress={onPress}
     >
       <View style={styles.menuItemIcon}>
-        <Ionicons name={icon as any} size={24} color="#ffffff" />
+        <SymbolView name={icon as any} size={24} tintColor="#ffffff" weight="bold"/>
       </View>
       <View style={styles.menuItemContent}>
         <Text style={styles.menuItemTitle}>{title}</Text>
@@ -115,7 +115,7 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
 
   const containerStyle = useAnimatedStyle(() => {
     const expandedWidth = screenWidth - 40;
-    const expandedHeight = 375;
+    const expandedHeight = 360;
     const fabSize = 56;
 
     return {
@@ -131,7 +131,7 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
         damping: 15,
         stiffness: 100,
       }),
-      bottom: withSpring(isExpanded.value ? 40 : 30, {
+      bottom: withSpring(isExpanded.value ? 40 : 50, {
         damping: 15,
         stiffness: 100,
       }),
@@ -169,24 +169,24 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
 
   const menuItems = [
     {
-      icon: "add",
-      title: "Add Money",
-      subtitle: "Add money to your wallet using your bank account or card.",
+      icon: "plus",
+      title: "Create Memory",
+      subtitle: "Turn your photo into a memory.",
     },
     {
-      icon: "filter",
-      title: "Filter",
-      subtitle: "Filter transactions by date, type, or amount.",
+      icon: "photo.badge.plus",
+      title: "Create Variations",
+      subtitle: "Create variations of your memory. Or create alternate scenarios.",
     },
     {
-      icon: "download",
-      title: "Receive",
-      subtitle: "Ask for money from friends or family.",
+      icon: "square.and.arrow.up",
+      title: "Share",
+      subtitle: "Share your memory with friends and family.",
     },
     {
-      icon: "wallet",
-      title: "Transactions",
-      subtitle: "View your transaction history and details.",
+      icon: "creditcard.circle.fill",
+      title: "Add Credits",
+      subtitle: "Add credits to your account.",
     },
   ];
 

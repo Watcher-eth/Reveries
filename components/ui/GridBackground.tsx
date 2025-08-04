@@ -42,13 +42,13 @@ export default function GridBackground() {
   // Make them obvious first
   const uniforms = {
     u_step:  [20, 30],
-    u_thick: 10.0,                              // thick to verify visibility
-    u_bg:    [1, 1, 1, 1],                     // white
-    u_line:  [0, 0, 0, 1],                     // black
+    u_thick: 1.0,                              // thick to verify visibility
+    u_bg:    [248/255, 248/255, 248/255, 1],                     // white
+    u_line:  [0.9, 0.9, 0.9, 0.5],                     // black
   };
 
   return (
-    <Canvas style={StyleSheet.absoluteFill}>
+    <Canvas style={[StyleSheet.absoluteFill, {borderRadius: 50}]}>
       <Fill>
         <Shader source={effect} uniforms={uniforms} />
       </Fill>

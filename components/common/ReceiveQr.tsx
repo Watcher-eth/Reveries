@@ -39,7 +39,7 @@ const CircleButton: React.FC<CircleButtonProps> = ({ name, label, onPress }) => 
 
 export default function ReceiveScreen() {
   const router = useRouter()
-  const codeValue = 'Watcher.lens'
+  const codeValue = 'Stacy Brown'
 
   const handleCopy = async () => {
     await Clipboard.setString(codeValue)
@@ -63,7 +63,7 @@ export default function ReceiveScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Receive</Text>
+        <Text style={styles.title}>Share</Text>
         <TouchableOpacity onPress={() => router.back()}>
           <SymbolView name="xmark" size={20} tintColor="#fff" weight="bold" />
         </TouchableOpacity>
@@ -105,7 +105,7 @@ export default function ReceiveScreen() {
             />
             ))}
         </View>
-        <Text style={styles.networksLabel}>Supported Tokens</Text>
+        <Text style={styles.networksLabel}>Supported Platforms</Text>
     </View>
 
       <View style={styles.actionsRow}>
@@ -123,8 +123,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     height: "100%",
     justifyContent: "space-between",
-paddingVertical: 20,
-paddingBottom: 40,
+paddingVertical:55,
+paddingBottom: 70,
+borderRadius: 30,
     backgroundColor: '#000',
     alignItems: 'center',
   },
