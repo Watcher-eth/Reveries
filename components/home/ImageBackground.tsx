@@ -10,6 +10,7 @@ import Animated, { useSharedValue, useDerivedValue, useAnimatedStyle } from "rea
 import Transition from "@/lib/react-native-screen-transitions/src";
 import { router } from "expo-router";
 import { layoutSpiral, Photo } from "./Spiral";
+import StampNode from "../ui/StampFrame"
 
 // ── dotted background shader ─────────────────
 const DOTS = `
@@ -71,7 +72,7 @@ export default function DottedPhotoField({ photos }: Props) {
         <Canvas style={StyleSheet.absoluteFill} pointerEvents="none">
           <Fill><Shader source={DOT_EFFECT} uniforms={uniforms} /></Fill>
           <Group transform={world}>
-            {placed.map((p) => <PhotoNode key={p.id} {...p} />)}
+          {placed.map((p) => <StampNode key={p.id} {...p} />)}
           </Group>
         </Canvas>
 
